@@ -29,13 +29,19 @@ class Simulation
 					elevator.board(@building.floor_hash[elevator.get_current_floor].people_leaving(space))
 		
 				end
-				elevator.move
 				elevator.to_s
-				if elevator.get_current_floor == @building.get_top_floor_number || elevator.get_current_floor == 1
+				elevator.move
+				
+				if elevator.get_current_floor == @building.get_top_floor_number && elevator.get_direction == 1
+					
+					elevator.change_direction
+				end
+				if elevator.get_current_floor == 1 && elevator.get_direction == -1
 					elevator.change_direction
 				end
 				
 			end
+			#use sleep so the simulation would not run too fast
 			sleep (0.3)
 			
 			
@@ -56,9 +62,9 @@ class Simulation
 end
 
 #
-simul = Simulation.new(1,5,3)
-# running simulation for 15 ticks
-simul.run(15)
+simul = Simulation.new(2,5,3)
+# running simulation for 35 ticks
+simul.run(35)
 
 
 

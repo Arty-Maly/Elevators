@@ -38,6 +38,10 @@ attr_accessor :current_floor
 	def change_direction 
 		@direction = @direction * -1
 	end
+
+	def get_direction
+		return @direction
+	end
 	def move
 
 		@current_floor = @current_floor+@direction
@@ -45,6 +49,6 @@ attr_accessor :current_floor
 	end
 
 	def to_s
-		puts "ID: " + (self.__id__.to_i % 1000).to_s + " elevator is leaving floor " + (@current_floor-1).to_s + " with " + @current_load.to_s + " people on board"
+		puts "ID: " + (self.__id__.to_i % 1000).to_s + " elevator is leaving floor " + (@current_floor).to_s + " with " + @current_load.to_s + " people on board"
 	end
 end

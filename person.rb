@@ -3,16 +3,15 @@
 
 class Person
 
-	def initialize (max_floor)
-		decide_origin(max_floor)
+	def initialize (max_floor, location)
+	
 		decide_destination(max_floor)
+		@origin = location
 		
 
 	end
 
-	def decide_origin(max)
-		@origin = rand(1..max)
-	end
+	
 
 	def decide_destination(max)
 		@destination = rand(1..max)

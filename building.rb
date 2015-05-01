@@ -29,7 +29,7 @@ class Building
 		@floor_hash = Hash.new
 
 		1.upto(number) do |i|
-			@floor_hash[i] = Floor.new(@number_of_elevators, number)
+			@floor_hash[i] = Floor.new(@number_of_elevators, number, i)
 		end
 	end
 

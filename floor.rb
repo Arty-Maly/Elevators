@@ -4,11 +4,11 @@
 # floor also creates the people
 class Floor
 	attr_accessor :queue
-	def initialize(number_of_elevators, top)
+	def initialize(number_of_elevators, top, location)
 		
 		make_buttons(number_of_elevators)
 		
-		create_queue_of_people(top)
+		create_queue_of_people(top, location)
 	end
 
 	def make_buttons (number_of_elevators)
@@ -29,12 +29,12 @@ class Floor
 
 	end
 
-	def create_queue_of_people(max_floor)
+	def create_queue_of_people(max_floor, origin)
 
 		@queue = Array.new
 		
 		10.times do
-			@queue.push(Person.new(max_floor))
+			@queue.push(Person.new(max_floor, origin))
 		end	
 
 	end
