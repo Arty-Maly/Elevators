@@ -61,7 +61,7 @@ class Simulation
 
 end
 
-#
+#create simulation with two elevators 5 floors and maximum load of 3 ppl per elevator
 simul = Simulation.new(2,5,3)
 # running simulation for 35 ticks
 simul.run(35)
